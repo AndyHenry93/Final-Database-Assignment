@@ -3,25 +3,146 @@ import java.util.Scanner;
 class Conn{  
 	public static void main(String args[]) throws Exception{  
 		
+		int q,z = 0;
 		
-	//create();
-	 // insertCourses();
-	//insertCourserequisits();
-	// insertCourseofferings();
-	//	insertCourseofferingtimings();
-	//	insertInstructors();
-		//insertStudent();
-	//	insertStudentGrade();
-		insertStudentEnrollmentCourses();
-	//	searchCourses();
-	// searchCourserequisits();
-		// searchCourseOfferings();
-		//searchCourseOfferingTimings();
-	//	searchInstructors();
-		searchStudentEnrollmentCourses();
-		
+		// Do-While Loop for the menu.
+		  do
+		  {
+		  System.out.println("");
+		  System.out.println("");
+		  System.out.println("Please choose what you want to do from below (1 - 2 - 3 - 4).");
+		  System.out.println("1- Create the Tables.");
+		  System.out.println("2- Insert Data into the Tables");
+		  System.out.println("3- Search the Tables Data");
+		  System.out.println("4- Enter (000) to Exit");
+		  Scanner sc = new Scanner(System.in);
+		  q = sc.nextInt();
+		  
+		  // The first Choice.
+		  if (q == 1)
+		  {
+			  create();
+		  }
+		  
+		  // Second Coice.
+		  else if (q == 2)
+		  {
+			  do
+			  {
+			  System.out.println("");
+			  System.out.println("");
+			  System.out.println("Please choose which Table you want to insert into (1 - 2 - 3 - 4 - 5 - 6 - 7 - 8).");
+			  System.out.println("1- Courses.");
+			  System.out.println("2- Courserequisits.");
+			  System.out.println("3- Courseofferings");
+			  System.out.println("4- Courseofferingtimings.");
+			  System.out.println("5- Instructors.");
+			  System.out.println("6- Students.");
+			  System.out.println("7- Studentgrade.");
+			  System.out.println("8- StudentenrollmentCourses.");
+			  System.out.println("9- Go Back...");
+			  z = sc.nextInt();
+			  if (z == 1)
+			  {
+				  insertCourses();
+			  }
+			  else if (z == 2)
+			  {
+				  insertCourserequisits();
+			  }
+			  else if (z == 3)
+			  {
+				  insertCourseofferings();
+			  }
+			  else if (z == 4)
+			  {
+				  insertCourseofferingtimings();
+				
+			  }
+			  else if (z == 5)
+			  {
+				  insertInstructors();
+			  }
+			  else if (z == 6)
+			  {
+				  insertStudent();
+			  }
+			  else if (z == 7)
+			  {
+				  insertStudentGrade();
+			  }
+			  else if (z == 8)
+			  {
+				  insertStudentEnrollmentCourses();
+			  }
+			  else if (z == 9)
+			  {
+				  break;
+				  }} while (z != 0); 
+			  }
+		  //Third Choice.
+		  else if (q == 3)
+		  {
+				
+			  do
+			  {
+			  System.out.println("");
+			  System.out.println("");
+			  System.out.println("Please choose which Table you want to insert into (1 - 2 - 3 - 4 - 5 - 6 - 7 - 8).");
+			  System.out.println("1- Courses.");
+			  System.out.println("2- Courserequisits.");
+			  System.out.println("3- Courseofferings");
+			  System.out.println("4- Courseofferingtimings.");
+			  System.out.println("5- Instructors.");
+			  System.out.println("6- Students.");
+			  System.out.println("7- Studentgrade.");
+			  System.out.println("8- StudentenrollmentCourses.");
+			  System.out.println("9- Go Back...");
+			  z = sc.nextInt();
+			  if (z == 1)
+			  {
+				  searchCourses();;
+			  }
+			  else if (z == 2)
+			  {
+				  searchCourserequisits();
+			  }
+			  else if (z == 3)
+			  {
+				  searchCourseOfferings();
+			  }
+			  else if (z == 4)
+			  {
+				  searchCourseOfferingTimings();
+				
+			  }
+			  else if (z == 5)
+			  {
+				  searchInstructors();
+			  }
+			  else if (z == 6)
+			  {
+				  searchStudent();
+			  }	
+			  else if (z == 7)
+			  {
+				  searchStudentGrade();
+			  }
+			  else if (z == 8)
+			  {
+				  searchStudentEnrollmentCourses();
+			  }
+			  else if (z == 9)
+			  {
+				  break;
+				  }} while (z != 0); 
+		  }
+		  else if (q == 000 || q == 4)
+		  {
+			  break;
+			  }} while (q != 000);  
+		 	
 	}
- 
  
  
 // Method to Create The Tables. 
@@ -46,7 +167,7 @@ static void create() throws Exception
    
 	   // Creating Tables //
 	   
-	   System.out.print("Creating Tables");
+	   System.out.println("Creating Tables");
 	   // Creating Courses Table.
 	   stmt.execute("CREATE TABLE Courses(" +
 			   "Coursenumber NUMBER(6) NOT NULL PRIMARY KEY, " + 
@@ -153,8 +274,9 @@ static void insertCourses() throws Exception
 	   System.out.println("insert data into Courses.");
 	   System.out.println("Please enter the course number.");
 	   int cNumber  = sc.nextInt();
+	   Scanner sc2 = new Scanner(System.in);     
 	   System.out.println("Please enter the course name.");
-	   String cName  = sc.next();
+	   String cName  = sc2.nextLine();
 	   System.out.println("Please enter the course title.");
 	   String cTitle  = sc.next();
 	   System.out.println("Please enter the course credits.");
@@ -209,7 +331,7 @@ static void insertCourserequisits() throws Exception
 	   
 	   Statement stmt = conn.createStatement();  
   
-	   // Inserting Data into Courses Table from console.
+	   // Inserting Data into Courserequisits Table from console.
 	   Scanner sc = new Scanner(System.in);     
 	   System.out.println("insert data into Courserequisits.");
 	   System.out.println("Please enter the course requisit number.");
@@ -265,7 +387,7 @@ static void insertCourseofferings() throws Exception
 	   
 	   Statement stmt = conn.createStatement();  
   
-	   // Inserting Data into Courses Table from console.
+	   // Inserting Data into Courseofferings Table from console.
 	   Scanner sc = new Scanner(System.in);     
 	   System.out.println("insert data into Courseofferings Table.");
 	   System.out.println("Please enter the Course Offering Number.");
@@ -458,7 +580,7 @@ static void insertStudent() throws Exception
 	   Scanner sc2 = new Scanner(System.in);     
 	   String studentName  = sc2.nextLine();
 	   System.out.println("Please enter the Program.");
-	   String program  = sc.nextLine();
+	   String program  = sc2.nextLine();
 	   // SQL Statement to insert into the table.
 	   stmt.executeUpdate("insert into Student" +
 	   "(Studentid, studentname , program) " +
@@ -901,8 +1023,54 @@ static void searchStudent() throws Exception
 	      System.out.println("ERROR: " + ex.getMessage());
 	  }}
 
+//Method to Search the Studentgrade Table.
 
+static void searchStudentGrade() throws Exception
+{
+	  try{  
+		  
+		  // Load Driver //
+		  
+		  Class.forName("oracle.jdbc.driver.OracleDriver");  
+	  
+	   // Create a connection object.
+	   
+	   Connection conn=DriverManager.getConnection(  
+	   "jdbc:oracle:thin:@localhost:1521:cisc","system","123456");  
+	  
+	   
+	   // Connection Object //  
+	   
+	   Statement stmt = conn.createStatement();  
 
+	   // Searching Data in Studentgrade Table.
+	   Scanner sc = new Scanner(System.in);     
+	   System.out.println("Searching the Studentgrade Table using Studentgradeid");
+	   System.out.println("Please enter the Student Grade ID.");
+	   int studentGradeId  = sc.nextInt();
+	   // SQL Statement to search the table.
+	   ResultSet Entry = stmt.executeQuery("SELECT * from Studentgrade where Studentgradeid = " +
+			   studentGradeId);
+		while (Entry.next())
+		{	
+	       System.out.println("Student Grade ID : " + Entry.getInt(1) + " || " +
+	    		   "Course Number : " + Entry.getInt(2) + " || " + 
+	    		   "Course Grade : " + Entry.getString(3) + " || " + 
+	    		   "Student ID : " + Entry.getInt(4));
+		}
+	   // Close the resources.
+
+	   stmt.close();     
+	   conn.close();
+	   
+	  }
+	   
+	  // Exception Handler //
+	   
+	  catch(Exception ex)
+	  {
+	      System.out.println("ERROR: " + ex.getMessage());
+	  }}
 
 
 //Method to Search the StudentenrollmentCourses Table.
@@ -951,5 +1119,4 @@ static void searchStudentEnrollmentCourses() throws Exception
 	  catch(Exception ex)
 	  {
 	      System.out.println("ERROR: " + ex.getMessage());
-	  }}
-}
+	  }}}
